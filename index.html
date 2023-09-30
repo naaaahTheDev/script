@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trolled</title>
+  <style>
+    body {
+      overflow: hidden;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    const body = document.body;
+    const trolledText = document.createElement('div');
+    trolledText.innerText = 'Trolled';
+    trolledText.style.fontSize = '36px';
+    trolledText.style.position = 'absolute';
+
+    const screenWidth = window.innerWidth;
+    const screenHeight = window.innerHeight;
+
+    let currentX = 0;
+
+    function addTrolled() {
+      const clonedTrolledText = trolledText.cloneNode(true);
+      clonedTrolledText.style.left = currentX + 'px';
+      currentX += 100; // Adjust this value to control the spacing between "trolled" texts
+      if (currentX > screenWidth) {
+        currentX = 0;
+      }
+      body.appendChild(clonedTrolledText);
+    }
+
+    // Add "trolled" repeatedly
+    const interval = 500; // Adjust this value to control the speed of adding "trolled"
+    setInterval(addTrolled, interval);
+  </script>
+</body>
+</html>
