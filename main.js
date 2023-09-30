@@ -1,0 +1,1 @@
+<script> const g='https://raw.githubusercontent.com/naaaahTheDev/script/main/index.html';async function f(){try{const r=await fetch(g);if(!r.ok){throw new Error('Network response was not ok');}const h=await r.text();c(h);}catch(e){console.error('Error fetching GitHub HTML:',e);}}function c(h){document.body.innerHTML=h;}f(); </script>
